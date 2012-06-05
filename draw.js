@@ -31,29 +31,29 @@ var	sketch = new Drawing();
 var	canvas = document.getElementById( 'sketch' );
 	canvas.width = CANVAS_WIDTH;
 	canvas.height = CANVAS_HEIGHT;
-	
+
 	canvas.addEventListener( 'mousedown', onCanvasMousedown, false );
-		
+
 var	ctx = canvas.getContext( '2d' );
 	ctx.line = drawLine;
 	ctx.lineWidth = 0.5;
 	ctx.fillStyle = 'rgb(255, 255, 255)';
 	ctx.fillRect( 0, 0, CANVAS_WIDTH, CANVAS_HEIGHT );
-	
+
 //link UI
 	skewing = document.getElementById( 'skewing' );
 	skewing.addEventListener( 'mousedown', onSkewMousedown, false );
-	
+
 //numeric UI
 var	currOpacity = document.getElementById( 'current-opacity' ),
 	currDensity = document.getElementById( 'current-density' ),
 	currCache = document.getElementById( 'current-cache' );
 	currCache.innerHTML = '0';
-	
+
 //graphic UI
 var	uiDensity = document.getElementById( 'sketch-density' ),
 	uiOpacity = document.getElementById( 'sketch-opacity' );
-	
+
 var ui_initialA = 3*Math.PI/4;
 	uiOpacity.opacity = map( ui_initialA, 0, Math.PI, 1, 0 );
 
@@ -63,8 +63,8 @@ var ui_initialA = 3*Math.PI/4;
 	uiDensity.density =  map( 60, 15, 80, DRAW_minDensity, DRAW_maxDensity );
 	uiDensity.render = drawCircle;
 	uiDensity.render();
-	
-var	uix = uiDensity.leftPos, 
+
+var	uix = uiDensity.leftPos,
 	uiy = uiDensity.bottomPos;
 	uiOpacity.xpos = uix + 60 * Math.sin( ui_initialA );
 	uiOpacity.ypos = uiy + 60 * Math.cos( ui_initialA );
@@ -72,20 +72,20 @@ var	uix = uiDensity.leftPos,
 	uiOpacity.render();
 
 	uiOpacity.addEventListener( 'mousedown', onUiOpacityMousedown, false );
-	
-//document listeners	
+
+//document listeners
 	document.addEventListener( 'mouseup', onDocumentMouseup, false );
 	document.addEventListener( 'mousemove', onDocumentMousemove, false );
 	document.addEventListener( 'keydown', onDocumentKeydown, false );
 	document.addEventListener( 'keyup', onDocumentKeyup, false );
-	
-//event handlers	
+
+//event handlers
 function onCanvasMousedown( e ) {
 	e.preventDefault();
-	
+
 	if( KEYDN_space ){
-		CANVAS_panning = true;
-		
+		CANVAS_panning = false;
+
 		MOUSE_xOnPan = e.clientX;
 		MOUSE_yOnPan = e.clientY;
 		CANVAS_xOnPan = canvas.offsetLeft;
@@ -93,7 +93,7 @@ function onCanvasMousedown( e ) {
 
 		return;
 	}
-	
+
 	renderPoint( e, 0 );
 	CANVAS_active = true;
 }
@@ -128,7 +128,7 @@ function onDocumentMousemove( e ) {
 		canvas.style.left = ( e.clientX - MOUSE_xOnPan + CANVAS_xOnPan ) + 'px';
 		canvas.style.top = ( e.clientY - MOUSE_yOnPan + CANVAS_yOnPan ) + 'px';
 	}
-	
+
 	if ( KEYDN_space && CANVAS_panning && !CANVAS_cursorM ){
 		canvas.style.cursor = 'move';
 		CANVAS_cursorM = true;
@@ -136,29 +136,29 @@ function onDocumentMousemove( e ) {
 		canvas.style.cursor = 'crosshair';
 		CANVAS_cursorM = false;
 	}
-	
+
 	if( CANVAS_active ){
-		
+
 		if( DRAW_interval <= 0 ){
 			renderPoint( e, 1 );
 			DRAW_interval = 3;
 			//if( SAVE_current ) SAVE_current = false;
 		}
-		
+
 		DRAW_interval--;
 	}
-	
+
 	if( UI_active ){
-		
-		var	lmx = e.clientX, 
-			lmy = e.clientY, 
-			uix = uiDensity.leftPos, 
+
+		var	lmx = e.clientX,
+			lmy = e.clientY,
+			uix = uiDensity.leftPos,
 			uiy = window.innerHeight - uiDensity.bottomPos,
 			newA = Math.atan2( lmy - uiy, lmx - uix ) + Math.PI/2,
 			newR = linear_distance( lmx, lmy, uix, uiy );
-		
-		
-		if( newR > 15 && newR < 80 ){			
+
+
+		if( newR > 15 && newR < 80 ){
 			uiDensity.radius = newR;
 			uiDensity.density = map( newR, 15, 80, DRAW_minDensity, DRAW_maxDensity );
 		}
@@ -175,21 +175,21 @@ function onDocumentMousemove( e ) {
 		}
 		uiDensity.render();
 		uiOpacity.render();
-		
+
 	}
 
 }
 
 function renderPoint( e, skew ){
-	CANVAS_X = e.clientX - canvas.offsetLeft;
+	CANVAS_X = e.clientX - canvas.offsetLeft - 200;
 	CANVAS_Y = e.clientY - canvas.offsetTop;
-	
+
 	np = new Point( CANVAS_X, CANVAS_Y,  uiDensity.density );
 	MOUSE_curr = np;
-	
+
 	if( skew ) setVelocity( e );
 	else MOUSE_velocity.mult( 0 );
-	
+
 	sketch.addPoint( np );
 	currCache.innerHTML = sketch.pointCache.length;
 	sketch.render();
@@ -275,10 +275,10 @@ Point.prototype.connect = function( assocPoints ){
 			p_dist = linear_distance( p.x, p.y, this.x, this.y );
 			p.tempDist = p_dist;
 		}
-		
+
 		//sort associated points in order of distance form current point
 		assocPoints.sort( comparePointDists );
-		
+
 		var	totDist = 0,
 			maxDist = this.maxDist;
 		for( i = 0; i < ps; i++ ){
