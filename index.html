@@ -6,14 +6,14 @@
 
         <title>aristidesfl</title>
         <meta name="description" content="aristidesfl">
-        <meta name="author" content="Aristides Francisco Lourenco">
-		
+        <meta name="author" content="Aristides Lourenco">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 		<link rel="canonical" href="http://www.aristidesfl.com/"/>
 		<link rel="shortcut icon" href="favicon.ico">
-        <!--        <link rel="apple-touch-icon" href="/apple-touch-icon.png">-->
-				
-        <style type="text/css">			
-		/* 
+
+        <style type="text/css">
+		/*
 		  html5doctor.com Reset Stylesheet (Eric Meyer's Reset Reloaded + HTML5 baseline)
 		  v1.4 2009-07-27 | Authors: Eric Meyer & Richard Clark
 		  html5doctor.com/html-5-reset-stylesheet/
@@ -28,7 +28,7 @@
 		dl, dt, dd, ol, ul, li,
 		fieldset, form, label, legend,
 		table, caption, tbody, tfoot, thead, tr, th, td,
-		article, aside, canvas, details, figcaption, figure, 
+		article, aside, canvas, details, figcaption, figure,
 		footer, header, hgroup, menu, nav, section, summary,
 		time, mark, audio, video {
 		  margin:0;
@@ -38,10 +38,10 @@
 		  font-size:100%;
 		  vertical-align:baseline;
 		  background:transparent;
-		}                  
+		}
 
 		article, aside, details, figcaption, figure,
-		footer, header, hgroup, menu, nav, section { 
+		footer, header, hgroup, menu, nav, section {
 		    display:block;
 		}
 
@@ -98,17 +98,17 @@
 				width: 0;
 			}
 			#body {
-				margin:20px 0 0 32px;				
+				margin:20px 0 0 32px;
 				float:left;
 				clear:left;
 				width: 0;
 				overflow:visible;
-			}			
+			}
             #aristidesfl {
                 font-family: 'HelveticaNeueBold', sans-serif;
 				letter-spacing:-2px;
                 font-size: 2em;
-				overflow: visible;				
+				overflow: visible;
 				float:left;
 				clear:left;
             }
@@ -117,7 +117,7 @@
                 margin: 0 0 0 1px;
             }
             #links li {
-                font-size: 1.28em;	
+                font-size: 1.28em;
 				line-height:0.9;
 				float:left;
 				clear:left;
@@ -131,7 +131,7 @@
 
             ::-moz-selection{ background: #eee; color:#444; text-shadow: none; }
             ::selection { background:#eee; color:#444; text-shadow: none; }
-			
+
 			#sketch-container {
 				top:0;
 				left:0;
@@ -142,11 +142,11 @@
 				cursor: crosshair;
 				z-index: -1;
 			}
-			
+
 			#sketch-UI, #sketch-density, #sketch-opacity {
 				display:none;
 			}
-			
+
 			#sketch{
 				position: absolute;
 				cursor: crosshair
@@ -168,28 +168,28 @@
             <li><a title="email" id="email" href="">email</a></li>
             <li><a title="skype" href="skype:aristideskype?call">skype</a></li>
             <li><a title="facebook" href="http://www.facebook.com/aristidesfl">facebook</a></li>
-            <li><a title="pgp" href="/publickey.asc">pgp</a></li>
-        </ul>        
-		<div id="sketch-container"> 
-		    <canvas id="sketch"></canvas> 
-		</div> 
-		<div id="sketch-UI"> 
-			<ul> 
-		    	<li>opacity: <span id="current-opacity"></span>%</li> 
-		        <li>density: <span id="current-density"></span></li> 
-		        <li>point cache: <span id="current-cache"></span></li> 
-		    </ul> 
-		    <ul> 
-		    	<li>pan: <i>space + drag</i></li> 
-		        <li>lock opacity: <i>hold shift</i></li> 
-		        <li>clear cache: <i>ctrl + del</i></li> 
-		        <li>save: <i>ctrl + shift + s</i></li> 
-		    </ul> 
-			<ul> 
-				<li><a id="skewing" class="disabled" href="#">velocity skewing disabled</a></li> 
-			</ul> 
-		</div> 
-		<div id="sketch-density"></div> 
+            <li><a title="pgp" href="/38F9E3DD.asc">pgp</a></li>
+        </ul>
+		<div id="sketch-container">
+		    <canvas id="sketch"></canvas>
+		</div>
+		<div id="sketch-UI">
+			<ul>
+		    	<li>opacity: <span id="current-opacity"></span>%</li>
+		        <li>density: <span id="current-density"></span></li>
+		        <li>point cache: <span id="current-cache"></span></li>
+		    </ul>
+		    <ul>
+		    	<li>pan: <i>space + drag</i></li>
+		        <li>lock opacity: <i>hold shift</i></li>
+		        <li>clear cache: <i>ctrl + del</i></li>
+		        <li>save: <i>ctrl + shift + s</i></li>
+		    </ul>
+			<ul>
+				<li><a id="skewing" class="disabled" href="#">velocity skewing disabled</a></li>
+			</ul>
+		</div>
+		<div id="sketch-density"></div>
 		<div id="sketch-opacity"></div>
 
         <script type="text/javascript" src="http://download.skype.com/share/skypebuttons/js/skypeCheck.js"></script>
