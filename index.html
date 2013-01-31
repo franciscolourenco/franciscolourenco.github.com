@@ -1,1 +1,202 @@
-<!doctype html><html><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"><title>aristidesfl</title><meta name="description" content="aristidesfl"><meta name="author" content="Aristides Lourenco"><meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="canonical" href="http://www.aristidesfl.com/"/><link rel="shortcut icon" href="favicon.ico"><style type="text/css">html,body,div,span,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,abbr,address,cite,code,del,dfn,em,img,ins,kbd,q,samp,small,strong,sub,sup,var,b,i,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,figcaption,figure,footer,header,hgroup,menu,nav,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}a{margin:0;padding:0;font-size:100%;vertical-align:baseline;background:transparent}ins{background-color:#ff9;color:#000;text-decoration:none}mark{background-color:#ff9;color:#000;font-style:italic;font-weight:bold}del{text-decoration:line-through}abbr[title],dfn[title]{border-bottom:1px dotted;cursor:help}table{border-collapse:collapse;border-spacing:0}hr{display:block;height:1px;border:0;border-top:1px solid #ccc;margin:1em 0;padding:0}input,select{vertical-align:middle}@font-face{font-family:'HelveticaNeueBold';src:local('HelveticaNeue-Bold'),local('Helvetica Neue Bold'),local('Helvetica Neue'),url('fonts/helveticaneuebold-webfont.eot?') format('eot'),url('fonts/helveticaneuebold-webfont.woff') format('woff'),url('fonts/helveticaneuebold-webfont.ttf') format('truetype'),url('fonts/helveticaneuebold-webfont.svg#webfont80RWyKpy') format('svg');font-weight:900;font-style:normal}@font-face{font-family:'HelveticaNeueUltraLight';src:local('HelveticaNeue-UltraLight'),local('Helvetica Neue UltraLight'),local('Helvetica Neue'),url('fonts/helveticaneueultralight-webfont.eot?') format('eot'),url('fonts/helveticaneueultralight-webfont.woff') format('woff'),url('fonts/helveticaneueultralight-webfont.ttf') format('truetype'),url('fonts/helveticaneueultralight-webfont.svg#webfontEBKs2YM7') format('svg');font-weight:100;font-style:normal}html{width:0}#body{margin:20px 0 0 32px;float:left;clear:left;width:0;overflow:visible}#aristidesfl{font-family:'HelveticaNeueBold',sans-serif;letter-spacing:-2px;font-size:2em;overflow:visible;float:left;clear:left}#links{font-family:'HelveticaNeueUltraLight',sans-serif;margin:0 0 0 1px}#links li{font-size:1.28em;line-height:.9;float:left;clear:left}a{text-decoration:none}a:link{color:#000}a:visited{color:#000}a:active{color:#000}a:hover{color:#000;text-shadow:0 0 0 #000}::-moz-selection{background:#eee;color:#444;text-shadow:none}::selection{background:#eee;color:#444;text-shadow:none}#sketch-container{top:0;position:absolute;width:100%;height:100%;overflow:hidden;cursor:crosshair;left:200px}#sketch-UI,#sketch-density,#sketch-opacity{display:none}#sketch{position:absolute;cursor:crosshair}#skypedetectionswf{display:none}</style></head><body id="body"><header id="aristidesfl"> aristidesfl </header><ul id="links"><li><a title="github" href="https://github.com/aristidesfl">github</a></li><li><a title="twitter" href="http://twitter.com/aristidesfl">twitter</a></li><li><a title="linkedin" href="http://www.linkedin.com/in/aristidesfl">linkedin</a></li><li><a title="email" id="email" href="">email</a></li><li><a title="skype" href="skype:aristideskype?call">skype</a></li><li><a title="facebook" href="http://www.facebook.com/aristidesfl">facebook</a></li><li><a title="pgp" href="/38F9E3DD.asc">pgp</a></li></ul><div id="sketch-container"><canvas id="sketch"></canvas></div><div id="sketch-UI"><ul><li>opacity: <span id="current-opacity"></span>%</li><li>density: <span id="current-density"></span></li><li>point cache: <span id="current-cache"></span></li></ul><ul><li>pan: <i>space + drag</i></li><li>lock opacity: <i>hold shift</i></li><li>clear cache: <i>ctrl + del</i></li><li>save: <i>ctrl + shift + s</i></li></ul><ul><li><a id="skewing" class="disabled" href="#">velocity skewing disabled</a></li></ul></div><div id="sketch-density"></div><div id="sketch-opacity"></div><script type="text/javascript" src="http://download.skype.com/share/skypebuttons/js/skypeCheck.js"></script><script type="text/javascript" src="rot13.js"></script><script type="text/javascript" src="draw.js"></script><script type="text/javascript">document.getElementById("email").href=Rot13.convert("znvygb:znvy@nevfgvqrfsy.pbz");</script></body></html>
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+        <title>aristidesfl</title>
+        <meta name="description" content="aristidesfl">
+        <meta name="author" content="Aristides Lourenco">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="canonical" href="http://www.aristidesfl.com/"/>
+		<link rel="shortcut icon" href="favicon.ico">
+
+        <style type="text/css">
+		/*
+		  html5doctor.com Reset Stylesheet (Eric Meyer's Reset Reloaded + HTML5 baseline)
+		  v1.4 2009-07-27 | Authors: Eric Meyer & Richard Clark
+		  html5doctor.com/html-5-reset-stylesheet/
+		*/
+
+		html, body, div, span, object, iframe,
+		h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+		abbr, address, cite, code,
+		del, dfn, em, img, ins, kbd, q, samp,
+		small, strong, sub, sup, var,
+		b, i,
+		dl, dt, dd, ol, ul, li,
+		fieldset, form, label, legend,
+		table, caption, tbody, tfoot, thead, tr, th, td,
+		article, aside, canvas, details, figcaption, figure,
+		footer, header, hgroup, menu, nav, section, summary,
+		time, mark, audio, video {
+		  margin:0;
+		  padding:0;
+		  border:0;
+		  outline:0;
+		  font-size:100%;
+		  vertical-align:baseline;
+		  background:transparent;
+		}
+
+		article, aside, details, figcaption, figure,
+		footer, header, hgroup, menu, nav, section {
+		    display:block;
+		}
+
+		ul { list-style:none; }
+
+		blockquote, q { quotes:none; }
+
+		blockquote:before, blockquote:after,
+		q:before, q:after { content:''; content:none; }
+
+		a { margin:0; padding:0; font-size:100%; vertical-align:baseline; background:transparent; }
+
+		ins { background-color:#ff9; color:#000; text-decoration:none; }
+
+		mark { background-color:#ff9; color:#000; font-style:italic; font-weight:bold; }
+
+		del { text-decoration: line-through; }
+
+		abbr[title], dfn[title] { border-bottom:1px dotted; cursor:help; }
+
+		/* tables still need cellspacing="0" in the markup */
+		table { border-collapse:collapse; border-spacing:0; }
+
+		hr { display:block; height:1px; border:0; border-top:1px solid #ccc; margin:1em 0; padding:0; }
+
+		input, select { vertical-align:middle; }
+
+		/* END RESET CSS */
+		@font-face {
+		    font-family: 'HelveticaNeueBold';
+		    src: local('HelveticaNeue-Bold'),
+				 local('Helvetica Neue Bold'),
+				 local('Helvetica Neue'),
+				 url('fonts/helveticaneuebold-webfont.eot?') format('eot'),
+		         url('fonts/helveticaneuebold-webfont.woff') format('woff'),
+		         url('fonts/helveticaneuebold-webfont.ttf') format('truetype'),
+		         url('fonts/helveticaneuebold-webfont.svg#webfont80RWyKpy') format('svg');
+		    font-weight: 900;
+		    font-style: normal;
+		}
+		@font-face {
+		    font-family: 'HelveticaNeueUltraLight';
+		    src: local('HelveticaNeue-UltraLight'),
+				 local('Helvetica Neue UltraLight'),
+				 local('Helvetica Neue'),
+				 url('fonts/helveticaneueultralight-webfont.eot?') format('eot'),
+		         url('fonts/helveticaneueultralight-webfont.woff') format('woff'),
+		         url('fonts/helveticaneueultralight-webfont.ttf') format('truetype'),
+		         url('fonts/helveticaneueultralight-webfont.svg#webfontEBKs2YM7') format('svg');
+			font-weight:100;
+		    font-style: normal;
+		}
+			html {
+				width: 0;
+			}
+			#body {
+				margin:20px 0 0 32px;
+				float:left;
+				clear:left;
+				width: 0;
+				overflow:visible;
+			}
+            #aristidesfl {
+                font-family: 'HelveticaNeueBold', sans-serif;
+				letter-spacing:-2px;
+                font-size: 2em;
+				overflow: visible;
+				float:left;
+				clear:left;
+            }
+            #links {
+               	font-family: 'HelveticaNeueUltraLight', sans-serif;
+                margin: 0 0 0 1px;
+            }
+            #links li {
+                font-size: 1.28em;
+				line-height:0.9;
+				float:left;
+				clear:left;
+            }
+
+            a { text-decoration:none; }
+            a:link { color: #000;}
+            a:visited {color: #000;}
+            a:active {color: #000;}
+            a:hover {color: #000; text-shadow: 0px 0px 0px #000; }
+
+            ::-moz-selection{ background: #eee; color:#444; text-shadow: none; }
+            ::selection { background:#eee; color:#444; text-shadow: none; }
+
+			#sketch-container {
+				top:0;
+				position:absolute;
+				width:100%;
+				height:100%;
+				overflow:hidden;
+				cursor: crosshair;
+                left:200px;
+			}
+
+			#sketch-UI, #sketch-density, #sketch-opacity {
+				display:none;
+			}
+
+			#sketch{
+				position: absolute;
+				cursor: crosshair;
+			}
+
+			#skypedetectionswf{
+				display:none;
+			}
+        </style>
+    </head>
+    <body id="body">
+		<header id="aristidesfl">
+            aristidesfl
+        </header>
+        <ul id="links">
+            <li><a title="github" href="https://github.com/aristidesfl">github</a></li>
+            <li><a title="twitter" href="http://twitter.com/aristidesfl">twitter</a></li>
+            <li><a title="linkedin" href="http://www.linkedin.com/in/aristidesfl">linkedin</a></li>
+            <li><a title="email" id="email" href="">email</a></li>
+            <li><a title="skype" href="skype:aristideskype?call">skype</a></li>
+            <li><a title="facebook" href="http://www.facebook.com/aristidesfl">facebook</a></li>
+            <li><a title="pgp" href="/38F9E3DD.asc">pgp</a></li>
+        </ul>
+		<div id="sketch-container">
+		    <canvas id="sketch"></canvas>
+		</div>
+		<div id="sketch-UI">
+			<ul>
+		    	<li>opacity: <span id="current-opacity"></span>%</li>
+		        <li>density: <span id="current-density"></span></li>
+		        <li>point cache: <span id="current-cache"></span></li>
+		    </ul>
+		    <ul>
+		    	<li>pan: <i>space + drag</i></li>
+		        <li>lock opacity: <i>hold shift</i></li>
+		        <li>clear cache: <i>ctrl + del</i></li>
+		        <li>save: <i>ctrl + shift + s</i></li>
+		    </ul>
+			<ul>
+				<li><a id="skewing" class="disabled" href="#">velocity skewing disabled</a></li>
+			</ul>
+		</div>
+		<div id="sketch-density"></div>
+		<div id="sketch-opacity"></div>
+
+        <script type="text/javascript" src="http://download.skype.com/share/skypebuttons/js/skypeCheck.js"></script>
+        <script type="text/javascript" src="rot13.js"></script>
+		<script type="text/javascript" src="draw.js"></script>
+        <script type="text/javascript">
+            document.getElementById('email').href= Rot13.convert('znvygb:znvy@nevfgvqrfsy.pbz');
+        </script>
+    </body>
+</html>
+
